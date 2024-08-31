@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        color:white;
+        font-family: sans-serif;
+        font-weight: 200px;
+        font-size: 50px;
+    }
+    .container{
+        width:100vw;
+        height: 100vh;
+        border:2px solid black;
+        display: flex;
+        /* flex-wrap: nowrap; */
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(#1A2980,#00d4ff)
+    }
+    .wraper{
+        border:2px solid white;
+        padding:20px;
+        border-radius: 10px;
+        font-size: 100px;
+        /* height: 200vh; */
+    }
+    .smallcontainer{
+        align-self:baseline;
+        justify-self:center;
+        display: flex;
+    }
+    @media all and (max-width:800px) {
+        .container{
+            background-color: yellow;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .smallcontainer{
+            align-self: center;
+            justify-self: baseline;
+        }
+        .wraper{
+            font-size: 40px;
+            font-weight: 100px;
+        }
+        
+    }
+</style>
+<body>
+
+    <div class="container">
+        <div class="smallcontainer">
+            <span id="date"></span>
+            <span>-</span>
+            <span id="month"></span>
+            <span>-</span>
+            <span id="year"></span>
+
+
+        </div>
+        <div class="wraper">
+            <span id="hr">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            <span id="ampm">pm</span>
+        </div>
+    </div>
+
+    <script>
+
+        function displayTime(){
+            let dateTime=new Date()
+            let hr=dateTime.getHours()
+            let min=dateTime.getMinutes()
+            let ampm=document.getElementById('ampm')
+            let sec=dateTime.getSeconds()
+            let date=dateTime.getDate()
+            let month=dateTime.getMonth()
+            let year=dateTime.getFullYear()
+            if(hr>12){
+                hr=hr-12
+                ampm.innerHTML = 'pm'
+            }
+            document.getElementById('hr').innerHTML =padZero(hr)
+            document.getElementById('min').innerHTML = padZero(min)
+            document.getElementById('sec').innerHTML =padZero(sec)
+            document.getElementById('date').innerHTML=date
+            document.getElementById('month').innerHTML=month
+            document.getElementById('year').innerHTML=year
+        }
+
+        function padZero(num){
+            return num<10?'0'+num:num
+
+        }
+        setInterval(displayTime,500)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // API -> Application Programming Interface
+     // we need API when two software or application are commi
+        // fetch('https://official-joke-api.appspot.com/jokes/programming/random')
+        // .then((res)=>res.json())
+        // .then((msg)=>console.log( msg[0].setup,msg[0].punchline))
+        // .catch((error)=>console.log(error))
+
+        // fetch('https://api-thirukkural.vercel.app/api?num=x')
+        // .then((res)=>console.log(res.joson()))
+        // .catch((error)=>console.log(error))
+
+        // fetch('https://coronavirus.m.pipedream.net/')
+        // .then((res)=>res.json())
+        // .then((msg)=>console.log(msg.cache))
+
+
+// fetch('https://dummyjson.com/products/1')
+// .then(res => res.json())
+// .then(json => console.log(json))
+    
+
+// get/post
+fetch('https://dummyjson.com/products',{
+    method:'POST',
+    headers:{
+        'content-type':'application/json'
+    },
+    body:JSON.stringify({
+        userid:83947,
+        id:34,
+        title:'text',
+        completed:false
+    })
+})
+.then(res => res.json())
+.then(json => console.log(json))
+            
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+                let arr=[34,56,7,34]
+                arr.forEach(val=>console.log(val))
+                function print(val){
+                    console.log(val)
+                }
+
+        map=>each and every 
+        let arr=[34,56,7,34]
+        let doublearr= arr.map(x=>x*10)
+        console.log(doublearr)
+
+        array of object
+
+        const student=[
+            {name:'karthi',age:25},
+            {name:'ananthi',age:16},
+            {name:'priya',age:23},
+            {name:'anu',age:60}
+    ]
+
+        const age1=student.map(val=>val.age)
+        console.log(age1)
+
+        fillter
+
+        let cost=[3456,345,56,34,234,53]
+
+        let  below100= cost.filter(x=>x<100)
+
+        console.log(below100)
+
+
+        reduce
+
+        let a=[10,2,3,4]
+        let total=a.reduce((total,val)=>total+val)
+        console.log(total)
+
+        let arr2d=[
+            ['a','b','a'],
+            ['c','d','f'],
+            ['d','e','g'],
+            ['f','g','c']
+
+        ]
+        output {'a':2,'b':1,'c':2,'d':2,'e':1,'f':2,'g':2}
+
+        const result= arr2d.flat().reduce((object,val)=>{
+            if(object[val]){
+                object[val]++
+            }
+            else{
+                object[val]=1
+            }
+
+            return(object)
+        },{})
+
+        console.log(result)
+
+        let arr1=[10,20,3,4,10,3,4,2]
+        let fillterarr=arr1.reduce((accoumlator,val)=>{
+            if(accoumlator.includes(val)==false){
+                accoumlator.push(val)
+            }
+            return(accoumlator)
+        },[])
+        console.log(fillterarr)
+
+        let arr1=[5,-3,5,-3,-4,34,5]
+
+        let positive=arr1.filter(val=>val>0).reduce((total,val)=>total+val)
+
+        console.log(positive)
+
+
+        let string='Robert Andrew George' //RAG
+        let split=string.split(' ')
+        console.log(split)
+        let empty=split.map((val)=>val[0])
+        console.log(empty.join(''))
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/cm-2nd.css">
+    <style>
+        *{
+    margin:0px;
+    padding:0px;
+}
+
+.parent_container{
+    background-color:aqua;
+    width:100vw;
+    height: 100vh;
+    padding:10px;
+}
+
+.container{
+    padding:40px;
+    width:50vw;
+    height: 50vh;
+    background:linear-gradient(gray,black);
+    border-radius: 5px;
+    margin:200px auto ;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.hr{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    width:30%;
+    color:aqua;
+    
+}
+.input{
+    display: flex;
+    justify-content: center;
+
+}
+input{
+    width:70%;
+    margin-top: 30px;
+    /* margin:20px; */
+    padding:10px;
+    /* background-color:transparent; */
+    /* color:white; */
+    border:2px solid aqua;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+    background:linear-gradient(gray,aqua);
+    color:black;
+    color:white;
+}
+
+
+h2{
+    color:aqua;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+
+}
+
+button{
+    width:20vw;
+    padding:10px;
+    background: linear-gradient(gray,aqua);
+    border:none;
+    border-radius: 9px;
+    margin-top: 20px;
+
+}
+
+#result{
+    color:white;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+<div class="parent_container">
+    <div class="container">
+        <h2>Palindrome checker</h2>
+        <div class="hr">
+            <hr>
+
+        </div>
+
+        <div class="input">
+            <input type="text" id="input" placeholder="Enter String">
+        </div>
+
+        <div class="button">
+            <button onclick="palindrome()">check</button>
+        </div>
+        <div id="result">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    function palindrome(){
+        const oldString=document.querySelector('#input').value;
+        const string1 = oldString.split(' ').join('');
+        console.log(string1[0])
+        var k=0;
+        var string2=''
+
+        for(let i=string1.length-1;i>=0;i--)
+        {
+            string2+=string1[i];
+        }
+
+        console.log(string2);
+        const result= document.querySelector('#result')
+        if(string2==string1){
+            
+            result.innerHTML = `Palindrome`
+        }
+        else    
+            result.innerHTML = `Not a Palindrome`
+
+
+    }
+</script>
+    
+</body>
+</html>

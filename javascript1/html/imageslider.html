@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: salmon;
+            display: flex;
+            border:2px solid black;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container{
+            min-height: 80vh;
+            width: 60%;
+            border:8px solid gray;
+            box-shadow:  3px 3px 10px 10px gray;
+             background: url("../images/bg1.jpg") center no-repeat; 
+           position: absolute;
+           transition: background 1s ease-in-out;
+        }
+        .btn-left{
+
+            position:absolute;
+            top:50%;
+            left:-4%;
+        }
+        .btn-right{
+            position: absolute;
+            top:50%;
+            right:-4%;
+        }
+        .fa-solid {
+            background-color: white;
+            padding:.4em;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-right"><i class="fa-solid fa-angles-right"></i>    <!-- <i class="fa-light fa-square-caret-right"></i> -->
+
+        </a>
+        <a class="btn btn-left"><i class="fa-solid fa-angles-left"></i>
+        </a>
+    </div>
+
+    <script>
+        const container = document.querySelector('.container')
+        const btn = document.querySelectorAll('.btn')
+        let imglist =['bg1','bg2','bg3','bg4']
+        let index=0
+
+        btn.forEach((button)=>{
+            button.addEventListener('click',()=>{
+                console.log('clicked')
+                if(button.classList.contains('btn-left')){
+                    index--;
+                    if(index<0){
+                        index=imglist.length-1
+                    }
+                    console.log(imglist[index])
+                    container.style.background=`url("../images/${imglist[index]}.jpg") center no-repeat`; 
+
+
+                }
+                else{
+                    index++
+                    if(index === imglist.length-1){
+                        index = 0
+                    }
+                    container.style.background=`url("../images/${imglist[index]}.jpg") center no-repeat`;
+                    console.log(imglist[index]) 
+
+                }
+            })
+        })
+    </script>
+    
+</body>
+</html>

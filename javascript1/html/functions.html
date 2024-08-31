@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        // Function Declaration
+        
+        function ispositive(num){
+            return num>0
+
+        }
+
+        console.log(ispositive(5))
+
+        function output(){
+            console.log('Output')
+
+        }
+
+        output()
+        // Hoisting
+        console.log(mul(4,5))
+
+        function mul(a,b){
+            return a*b;
+        }
+
+        console.log(mul)
+
+        // default parameter
+
+
+        function greet(a,b,c,name='raj'){
+            console.log('hi '+name)
+        }
+
+        greet(10,20,'karthi')
+
+
+    // recursion
+
+
+    // Function expression
+
+        let a=10
+    let even = function(num){
+        return(num%2==0)
+    }
+
+    console.log(even(1))
+
+
+    arr=[1,2,3,3,4,5,6]
+
+    let sum=function(arr1){
+        let s=0
+        for(let i of arr1){
+            s=s+i
+        }
+        return s
+    }
+
+    console.log(sum(arr))
+
+    // let volume=function(l,b,h){
+    //     return l*b*h
+    // }
+
+    // console.log(volume(10,20,30))
+    // Arrow function
+
+
+    let volume=(l,b,h)=>{
+
+        return l*b*h
+
+    }
+
+    console.log(volume(10,20,30))
+
+    let findsum =(arr)=>{
+        let sum=0
+        for(let val of arr){
+            sum+=val
+        }
+        return sum
+    }
+
+    console.log(findsum(arr))
+
+// area of circle
+
+    let area = r=>Math.PI*r*r
+
+    console.log(area(10))
+
+
+    // rest parameter
+
+
+    // let  product = function(...args){
+    //     console.log(args)
+    //     s=1
+    //     for(let val of args){
+    //         s=s*val
+    //     }
+    //     return(s)
+    // }
+
+    let  product = function(){
+        console.log(arguments)
+        s=1
+        for(let i=0;i<arguments.length;i++){
+            s=s*arguments[i]
+        }
+        return(s)
+    }
+
+
+    console.log(product(10,20,30,40,50))
+
+    // Generators-> generators value one by one
+
+    function* indexgenerator(){
+        let index=1
+        while(true){
+            yield index++
+        }
+    }
+
+    const gen = indexgenerator()
+
+    console.log(gen.next().value)
+    console.log(gen.next().value)
+    console.log(gen.next().value)
+
+
+    </script>
+
+
+
+
+ 
+</body>
+</html>

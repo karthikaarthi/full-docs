@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1></h1>
+        <select name="" id="select">
+            <option value="select">selecte</option>
+        </select>
+
+    <script>
+        function greetconsole(name){
+            console.log('name '+name);
+        }
+
+        function greetheading(name){
+            const h1= document.querySelector('h1');
+            h1.innerHTML = 'hello '+name;
+
+        }
+
+        function greet(callback){
+            console.log(callback)
+            callback('raj');
+        }
+
+        greet(greetconsole)
+        greet(name =>{
+            const h1= document.querySelector('h1');
+            h1.innerHTML = 'hello '+name;
+
+        })
+
+
+        Foreach
+
+        let arr=['apple','grapes','orange','mango']
+
+        arr.forEach(print)
+
+        function print(val){
+            console.log(val);
+
+        }
+
+        arr.forEach(val=>console.log(val.toUpperCase()))
+            console.log(arr)
+
+        arr.forEach((val,index,arr)=>{
+           arr[index]= val.toUpperCase()
+        })
+        console.log(arr)
+
+        let arr=['ECE','IT','CSC','EEE']
+        arr.forEach(val=>{
+            const option=document.createElement('option')
+            option.innerHTML=val
+            option.value=val
+            document.getElementById('select').appendChild(option)
+        })
+        arr.forEach(val=>{
+            const option=document.createElement('option')
+            option.innerHTML=val
+            option.value=val
+
+            document.getElementById('select').appendChild(option)
+        })
+
+    </script>
+</body>
+</html>

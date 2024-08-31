@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/cm-2nd.css">
+    <style>
+        *{
+    margin:0px;
+    padding:0px;
+}
+
+.parent_container{
+    background-color:aqua;
+    width:100vw;
+    height: 100vh;
+    padding:10px;
+}
+
+.container{
+    padding:40px;
+    width:50vw;
+    height: 50vh;
+    background:linear-gradient(gray,black);
+    border-radius: 5px;
+    margin:200px auto ;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.hr{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    width:30%;
+    color:aqua;
+    
+}
+.input{
+    display: flex;
+    justify-content: center;
+
+}
+input{
+    width:70%;
+    margin-top: 30px;
+    /* margin:20px; */
+    padding:10px;
+    /* background-color:transparent; */
+    /* color:white; */
+    border:2px solid aqua;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+    background:linear-gradient(gray,aqua);
+    color:black;
+    color:white;
+}
+
+
+h2{
+    color:aqua;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+
+}
+
+button{
+    width:20vw;
+    padding:10px;
+    background: linear-gradient(gray,aqua);
+    border:none;
+    border-radius: 9px;
+    margin-top: 20px;
+
+}
+
+#result{
+    color:white;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+<div class="parent_container">
+    <div class="container">
+        <h2>FD Rate Calculator</h2>
+        <div class="hr">
+            <hr>
+
+        </div>
+
+        <div class="input">
+            <input type="text" id="input" placeholder="Tenure months">
+        </div>
+
+        <div class="button">
+            <button onclick="fdrate()">Calculator</button>
+        </div>
+        <div id="result">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    function fdrate(){
+        const months=Number(document.getElementById('input').value)
+        if(months<3)
+            rate=5.8
+        else if(months>=3 && months<=6)
+            rate=6.5
+        else if(months>=7 && months<=9)
+            rate=6.8
+        else
+            rate=7
+
+        
+        const result = document.querySelector('#result');
+        result.innerHTML = ` Your interest rate is ${rate} %`
+    }
+</script>
+    
+</body>
+</html>

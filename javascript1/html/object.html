@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let items={
+            name:'karthi',
+            age:29,
+            city:'chennai'
+        }
+        console.log(items['name'])
+        // Another way to create object
+
+        let item2=new Object()
+        item2.color='yellow'
+        item2.food='briyani'
+
+        console.log(item2)
+
+        // Accessing object
+        // dot notation
+
+        console.log(item2.food)
+        item2.food='veg'
+        console.log(item2['food'])
+        console.log(item2)
+
+        // Adding new property in 
+        item2.place='Dindigul'
+        console.log(item2)
+
+        // Square bracket notation
+        console.log(items['name'])
+
+        
+        let name1='name'
+        console.log(items[name1])
+        console.log(items.name1)
+
+        let items1={
+            name:'karthi',
+            age:29,
+            city:'chennai',
+            course:['c','c++'],
+            dimensions:{
+                length:7,
+                innerHeight:3
+            }
+        }
+        console.log(items1.course[0])
+        console.log(items1.dimensions.length)
+
+
+        let item={
+            name:'karthi',
+            age:29,
+            city:'chennai',
+            buy:function(){
+                console.log('This is method')
+            },
+
+            add(){
+                console.log('added')
+            }
+
+
+        }
+        item.buy()
+        item.add()
+    </script>
+</body>
+</html>

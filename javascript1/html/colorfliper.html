@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --rose:rgb(225, 13, 77);
+        }
+        .heading{
+            color:rgb(225, 13, 77);
+            display: flex;
+            font-size: 30px;
+            justify-content: space-between;
+        }
+        .container{
+            height:70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap{
+            height: 100vh;
+            width: 100vw;
+        }
+        button{
+            background-color:var(--rose);
+            padding:20px;
+            border: none;
+            border-radius: 15px;
+            /* background-color: brown; */
+        }
+        hr{
+            color:var(--rose);
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        Color Flipper
+        <span id="color">#FFFFFF</span>
+    </div>
+    <hr>
+
+    <div class="wrap">
+        <div class="container">
+            <button id="btn">Change background color</button>
+        </div>
+    </div>ex
+
+
+        <script>
+            let button= document.querySelector('button')
+            const wrap=document.getElementsByClassName('wrap')[0]
+            const span = document.getElementById('color')
+            console.log(wrap)
+            let hex=[0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+
+            button.addEventListener('click',function (){
+                let h_value='#'
+
+
+                for(let i=0;i<6;i++){
+                        hex_value +=hex[Math.floor(Math.random()*15)];
+                }
+
+                wrap.style.backgroundColor = hex_value;
+   sZZZ             console.log(hex_value)
+                span.innerHTML = hex_value;
+               
+            })
+
+        </script>
+    
+</body>
+</html>
