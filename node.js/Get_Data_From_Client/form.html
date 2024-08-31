@@ -1,0 +1,81 @@
+<html>
+    
+    <head> <title> Form </title></head>
+
+    <body>
+
+            <form action="/user" method="POST">
+
+                <label for = "userName" >Enter your Name : </label>
+                <input type = "text" name = "userName" id = "userName">
+
+                <br><br>
+
+                <label for = "userAge" >Enter your Age : </label>
+                <input type = "number" name = "userAge" id = "userAge">
+
+                <br><br>
+
+                <label for = "userEmail" >Enter your Email : </label>
+                <input type = "text" name = "userEmail" id = "userEmail">
+
+                <br><br>
+
+                <label for = "userPassword" >Enter your Password : </label>
+                <input type = "password" name = "userPassword" id = "userPassword">
+
+                <br><br>
+
+                <label for = "userDOB" >Enter your DOB : </label>
+                <input type = "date" name = "userDOB" id = "userDOB">
+
+                <br><br>
+
+                <label >Gender : </label>
+
+                <input type="radio" name = "gender" id = "male" value = "male">
+                <label for = "male"> Male </label>
+
+                <input type="radio" name = "gender" id = "male" value = "female">
+                <label for = "male"> Female </label>
+
+                <br><br>
+
+                <label> Courses : </label>
+
+                <input type="checkbox" value="C" id = "C" name = "course">
+                <label for = "C"> C </label>
+
+                <input type="checkbox" value="CPP" id = "CPP" name = "course">
+                <label for = "CPP"> C++ </label>
+
+                <input type="checkbox" value="Java" id = "Java" name = "course">
+                <label for = "Java"> Java </label>
+
+                <br><br>
+
+                <label> Hobbies : </label>
+
+                <select name = "hobbies">
+                    <option value = "" selected > Select </option>
+                    <option value = "footBall" > Foot Ball </option>
+                    <option value = "cricket" > Cricket </option>
+                    <option value = "volley Ball" > Volley Ball </option>
+                </select>
+
+                <br><br>
+
+                <label for = "address"> Address : </label> <br>
+                <textarea name="address" id="address" cols="30" rows="2"></textarea>
+
+
+                <br><br>
+
+                <input type = "submit" value = "Submit">
+                <input type = "reset" value = "Reset">
+
+            </form>
+
+    </body>
+
+</html>

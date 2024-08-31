@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="get">GET</button>
+    <button id="post">POST</button>
+    <button id="delete">DELETE</button>
+    <button id="patch">PATCH</button>
+</body>
+
+<script>
+    document.getElementById("get").addEventListener("click",()=>{
+        const xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange =()=>{
+            if(xhttp.readyState == 4 && xhttp.status == 200){
+
+            }
+        }
+        xhttp.open("GET","/",true);
+        xhttp.send()
+    })
+
+    document.getElementById("post").addEventListener("click",()=>{
+        console.log("clicked")
+        const xhttp =new XMLHttpRequest()
+        xhttp.onreadystatechange =()=>{
+            if(xhttp.readyState == 4 && xhttp.status == 200){
+                
+            }
+        }
+        xhttp.open("POST","/post",true);
+       xhttp.send()
+    })
+
+
+    document.getElementById("patch").addEventListener("click",()=>{
+        const xhttp =new XMLHttpRequest()
+        xhttp.onreadystatechange =()=>{
+            if(xhttp.readyState == 4 && xhttp.status == 200){
+                
+            }
+        }
+        xhttp.open("PATCH","/patch",true);
+
+        xhttp.send()
+    })
+
+
+    document.getElementById("delete").addEventListener("click",()=>{
+        const xhttp =new XMLHttpRequest()
+        xhttp.onreadystatechange =()=>{
+            if(xhttp.readyState == 4 && xhttp.status == 200){
+                
+            }
+        }
+        xhttp.open("DELETE","/delete",true);
+        // xhttp.setRequestHeader("X-HTTP-Method-Override", "DELETE");
+        xhttp.send()
+    })
+
+
+
+</script>
+</html>

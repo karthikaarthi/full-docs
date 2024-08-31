@@ -1,0 +1,19 @@
+What is NPM?
+
+
+Node package manager
+ It installs with Node.js
+ NPM is a repo that contains js libraries / dependencies
+ We can use command line manage packageAlso it will be easir to ship your app to other computer
+ -using package.json
+
+ package.json
+ how to create?
+ scripts
+ dependencies - Installing packages (lodesh)
+
+ Global vs Local installation
+
+ What are => ^~*
+
+ Importing / require in your apphellohellohellohellohellohellohellohello
