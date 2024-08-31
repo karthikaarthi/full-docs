@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box1,#box2,#box3{
+            width: 100px ;
+            height: 100px ;
+            float: left;
+            background: #111;
+            margin-left: 10px;
+        }
+        #box2{
+            background: red;
+        }
+        #box3{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <button id="b1">Box1</button>
+    <button id="b2">BOx2</button>
+    <button id="b3">Box2</button>
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("#box1").fadeOut("slow");
+
+            $("#b1").click(function(){
+
+                $("#box1").fadeIn("slow");
+            })
+
+            $("#b2").click(function(){
+
+
+
+                $("#box1").fadeTo("slow",0.25)
+            })
+        })
+    </script>
+</body>
+</html>

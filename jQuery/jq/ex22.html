@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing Methode</title>
+    <style>
+        div{
+            width:500px;
+            height: 500px;
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body >
+    <h1>Empty Methode</h1>
+    <button id="btn">Empty</button>
+    <div class="sample">
+        <img src="../img/1.jpg" alt="">
+        <h2>welcome to all</h2>
+    </div>
+
+
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("#btn").click(function(){
+                $(".sample").empty();
+                $(".sample").html("<h1>Div has been emptied</h1>").fadeIn(2000);
+            })
+
+
+        })
+    </script>
+</body>
+</html>

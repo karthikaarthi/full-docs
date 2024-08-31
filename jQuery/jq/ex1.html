@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .over{
+            background-color: rgb(44, 180, 226);
+        }
+    </style>
+</head>
+<body>
+
+    <table border="2px">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+
+        <tr>
+            <td> Ram</td>
+            <td>20</td>
+            <td>Salem</td>
+        </tr>
+
+        <tr>
+            <td> 1Sam</td>
+            <td>25</td>
+            <td>Thirchy</td>
+        </tr>
+
+
+        <tr>
+            <td> Kumar</td>
+            <td>21</td>
+            <td>Salem</td>
+        </tr>
+
+
+        <tr>
+            <td> Ram</td>
+            <td>20</td>
+            <td>Salem</td>
+        </tr>
+
+    </table>
+
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("table tr").mouseover(function(){
+                $(this).addClass("over");
+            })    
+            $("table tr").mouseout(function(){
+                $(this).removeClass("over")
+            })    
+            // $("tr:gt(3)").css("color","red");
+            $("tr:not(tr:eq(1))").css("color","red");
+              
+        })
+    </script>
+</body>
+</html>

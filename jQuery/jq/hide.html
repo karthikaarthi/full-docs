@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadd Cae Computers</h1>
+    <p class="para"> first topic in jquery</p>
+    <p class="para">This is first topic in jquery</p>
+    <p class="para">Learn be smart</p>
+
+    <p>HTML <a href="#" target="_blank">Read more</a></p>
+    <p>CSS <a href="#" >Read more</a></p>
+    <p>C <a href="#" >Read more</a></p>
+    <p>Java <a href="#" target="_blank">Read more</a></p>
+    <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>last</li>
+    </ul>
+    <ul>
+        <li>C</li>
+        <li>C++</li>
+        <li>Python</li>
+        <li>Java</li>
+    </ul>
+
+    <p>Learn by <a href="#">Read More</a></p>
+    <button>Click to hide</button>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        $("documents").ready(function(){
+            $("button").click(function(){
+                $("a[target='_blank']").hide();
+            })
+        })
+    </script>
+</body>
+</html>

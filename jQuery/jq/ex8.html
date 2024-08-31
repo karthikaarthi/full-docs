@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bdy">
+    
+    <h1>Welcome to all</h1>
+    <p id="x"></p>
+    <p id="y"></p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur autem quo, eveniet, animi est dolores commodi placeat molestiae minima vel neque! Sequi quod magnam similique nisi laboriosam, necessitatibus rem hic. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum vel cupiditate quaerat eum veniam dolores iste ex non labore sed, accusantium magni quae ipsa odit delectus excepturi blanditiis nobis iusto. lorem</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur autem quo, eveniet, animi est dolores commodi placeat molestiae minima vel neque! Sequi quod magnam similique nisi laboriosam, necessitatibus rem hic. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum vel cupiditate quaerat eum veniam dolores iste ex non labore sed, accusantium magni quae ipsa odit delectus excepturi blanditiis nobis iusto. lorem</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur autem quo, eveniet, animi est dolores commodi placeat molestiae minima vel neque! Sequi quod magnam similique nisi laboriosam, necessitatibus rem hic. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum vel cupiditate quaerat eum veniam dolores iste ex non labore sed, accusantium magni quae ipsa odit delectus excepturi blanditiis nobis iusto. lorem</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur autem quo, eveniet, animi est dolores commodi placeat molestiae minima vel neque! Sequi quod magnam similique nisi laboriosam, necessitatibus rem hic. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum vel cupiditate quaerat eum veniam dolores iste ex non labore sed, accusantium magni quae ipsa odit delectus excepturi blanditiis nobis iusto. lorem</p>
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("#bdy").bind("mousemove",windowaxis);
+
+        })
+
+        function windowaxis(event){
+            $("#x").html("X axis "+event.screenX);
+            $("#y").html("Y axis "+event.screenY);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to bind an event in jqery</title>
+</head>
+<body>
+    <h2>Computer Education</h2>
+    <form action="">
+        A Value <input type="text" id="a">
+        B Value <input type="text" id="b">
+        <button id="btn">Calculate</button>
+        <p id="status">-</p>
+
+    </form>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        $("documents").ready(function(){
+            $("#btn").bind("click",add);
+            $("#a").bind("keyup",changeme)
+                    .bind("blur",blur_evt)
+                    .bind("focus",focus_evt);
+        })
+        function add(){
+            let c=Number( $("#a").val())+Number($("#b").val())
+            $("#status").html(c);
+            // alert(c);
+        }
+
+        function changeme(){
+            $("#status").html("Your a Typing in A value")
+        }
+
+        function blur_evt(){
+            $("#status").html("Your a outside of A Textbox");
+        }
+
+        function focus_evt(){
+            $("#status").html("Your a Inside of A Textbox");
+
+        }
+    </script>
+</body>
+</html>

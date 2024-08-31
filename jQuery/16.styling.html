@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applying Css Properties</title>
+</head>
+<body>
+    <h1>Cadd Cae Computer Education</h1>
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $("document").ready(function(){
+            // single
+            $("h1").css("font-size","50px");
+
+            // multiple
+            $("h1").css({
+                'color':'red',
+                'text-decoration':'underline',
+                'border':'2px solid black',
+                'padding':'10px',
+                'background-color':'lightgreen'
+            })
+        })
+    </script>
+    
+</body>
+</html>

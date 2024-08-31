@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li{
+            color:black;
+        }
+
+        .color{color:red;}
+    </style>
+</head>
+
+<body>
+    <h3>Children</h3>
+    <li>Designing</li>
+        <li>Web Designing</li>
+        <li>
+         <ul class="list">
+            <li>Graphgramming</li>
+            <li>Design</li>
+        <li>
+            <ul>
+                <li>C Program</li>
+                <li>C++ Program</li>
+                <li>Java</li>
+                <li>C#</li>
+            </ul>
+        </li>
+
+    </ul>    
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            // $("ul.list").children('li:first-child').addClass('color');
+            $("ul.list").children('li').first().addClass('color');
+        })
+    </script>
+</body>
+</html>

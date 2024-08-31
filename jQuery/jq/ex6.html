@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind and Unbind Events in jqery</title>
+</head>
+<body>
+    
+    <h2>Computer Education</h2>
+    <p id="status">----------</p>
+    <button id="btn">View Data</button>
+    <button id="btnb">Bind Event</button>
+    <button id="btnub">UnBind Event</button>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        $("documents").ready(function(){
+            $("#btnb").click(function(){
+                $("#btn").bind("click",bindalert);
+                $("#status").html("Event Binded click view data........");
+            })
+
+            $("#btnub").click(function(){
+                $("#btn").unbind("click",bindalert)
+                $("#status").html("Event Unbinded ")
+            })
+        })
+
+        function  bindalert(){
+            alert("Button View Data is Binded");
+        }
+
+
+    </script>
+</body>
+</html>

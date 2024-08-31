@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>table</h1>
+<table>
+
+    <tr>
+        <td>DATA-0</td>
+        <td>DATA</td>
+    </tr>
+
+    <tr>
+        <td>DATA-1</td>
+        <td>DATA</td>
+    </tr>
+
+
+    <tr>
+        <td>DATA-2</td>
+        <td>DATA</td>
+    </tr>
+
+
+    <tr>
+        <td>DATA-3</td>
+        <td>DATA</td>
+    </tr>
+
+    <tr>
+        <td>DATA-4</td>
+        <td>DATA</td>
+    </tr>
+
+
+    <tr>
+        <td>DATA-5</td>
+        <td>DATA</td>
+    </tr>
+
+
+</table>
+    
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("tr:even").css("color","orange");
+            $("tr:odd").css("color","green");
+        })
+    </script>
+</body>
+</html>

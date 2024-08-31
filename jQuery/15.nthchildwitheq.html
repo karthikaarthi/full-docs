@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nthchildwitheq</title>
+
+    <style>
+        li{
+            color:black;
+        }
+
+        .color{color:red;}
+    </style>
+</head>
+
+<body>
+    <h3>Nth Child With eq</h3>
+    <ul class="list">
+        <li>Graphics Designing</li>
+        <li>Web Designing</li>
+        <li>Programming</li>
+        <li>
+            <ul>
+                <li>C Program</li>
+                <li>C++ Program</li>
+                <li>Java</li>
+                <li>C#</li>
+            </ul>
+        </li>
+
+    </ul>    
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            // $("ul.list").children('li:nth-child(2)').text('This is nth child in jquery')
+            $("ul.list").children('li').eq(1).text('Change by eq' )
+        })  
+    </script>
+</body>
+</html>

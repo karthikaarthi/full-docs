@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .box1{
+        width:200px;
+        height: 200px;
+        background-color: orangered;
+    
+    }
+
+
+    </style>
+</head>
+<body>
+    
+
+    <h2>Computer Education</h2>
+    <button id="btn">Click me</button>
+    <div class="box1">
+        <h2>Learn be smart</h2>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        $("documents").ready(function(){
+            $("#btn").click(function(){
+                $('.box1').fadeOut(2000,function(){
+                    $(".box1").html("<h2>This is callback function </h2>").fadeIn(2000);
+                });
+            })
+        })
+    </script>
+</body>
+</html>

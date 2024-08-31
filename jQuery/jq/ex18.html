@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Computer Education</h1>
+    <button id="btn">Advanced  using Attribute</button>
+
+    <p class="para">paragraph using class</p>
+    <p id="para1">paragraph using id para1</p>
+    <p id="para2">paragraph using id para2</p>
+    <p id="para3" lang="en-us">paragraph using id para3 and language English</p>
+    <p id="para3" lang="en-gb">paragraph using id para3 and language Gibberish</p>
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+        $("#btn").click(function(){
+            // $('p[class]').css({"background":"pink"})
+            // $('p[id]').css({"background":"pink"})
+            // $('p[id=para1]').css({"background":"pink"})
+            // $('p[id=para2]').css({"background":"pink"})
+            // $('p[id^=para]').css({"background":"pink"})
+            // $('p[lang]').css({"background":"pink"})
+            $('p[lang=en-us]').css({"background":"pink"})
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Between Classes</title>
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+
+        .italic{
+            font-style: italic;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body >
+    <h1>Toggle Between Classes</h1>
+    <button id="btn">Toggle Between Classes</button>
+    <p id="para1">This is sample paragraph</p>
+    <p id="para2">This is sample paragraph</p>
+
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("#btn").click(function(){
+                $("p#para1").toggleClass("bold italic underline");
+            })
+
+
+        })
+    </script>
+</body>
+</html>

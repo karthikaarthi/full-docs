@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Computer Education </h2>
+
+    <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo dolore nisi, facilis cum alias quo debitis magni itaque explicabo temporibus neque, quod praesentium earum? Molestias quasi consequuntur error repellendus illum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet velit laboriosam facere dolore sapiente quas expedita. Minima voluptatum fuga nesciunt doloremque quo magni fugiat dolores? Reiciendis harum sequi tempora sunt?</p>
+
+    <button id="hide">Hide Para</button>
+
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+                $("#hide").click(function(){
+                    if($("#para").is(":visible")){
+                        $("#para").fadeOut(2000);
+                        $(this).html("Show para");
+                    }
+                    else if($("#para").not(":visible")){
+                        $("#para").fadeIn(2000);
+                        $(this).html("Hide para");
+
+                    }
+                })
+                
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing Methode</title>
+    <style>
+        body{
+            width:600px;
+            height: 600px;
+            border:2px solid blue;
+        }
+    </style>
+</head>
+<body >
+    <h1>Traversing Methode</h1>
+    <!-- 1. Children()   -For selecting children
+    2. prev()   -For selecting Previous Content
+    3. next()   -For selecting Next Content
+    4. parents()   -For selecting the Parents
+    5. parentsUntil()   -For Limiting Parents
+    6. find()       -To Find or Search Appropriate Content. -->
+    <button id="btn">Select</button>
+
+    <div class="sample">
+            <p class="class1">paragraph using class1</p>
+            <p id="para1">paragraph using id para1</p>
+            <p class="class2" lang="en-gb">paragraph using id class2</p>
+
+            <p id="para2">paragraph using id para2</p>
+            <p id="para3" lang="en-us">paragraph using id para3 </p>
+    </div>
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+        $("#btn").click(function(){
+            // $(".sample").children().css({"background":"pink"});
+            // $(".class2").prev().css({"background":"pink"});
+            // $(".class2").next().css({"background":"pink"});
+            // $(".class2").parents().css({"background":"pink"});
+            // $(".class2").parentsUntil($("body")).css({"background":"pink"});
+            $(".sample").find(".class2").css({"background":"pink"});
+        })
+        })
+    </script>
+</body>
+</html>

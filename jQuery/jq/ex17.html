@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Computer Education</h1>
+    <button id="btn">Advanced Filter</button>
+
+    <ol>
+        <li>C</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>Python</li>
+    </ol>
+
+    <div class="sample">
+        <p>oth-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+        <p class="sample">1th-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+        <p class="sample1">2th-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+        <!-- <h1>Heading</h1> -->
+        <p>3th-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+    </div>
+
+    <!-- <div class="sample">
+        <p>oth-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+        <p class="sample">1th-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+        <p class="sample1">2th-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+        <p>3th-para Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae saepe voluptatum harum, ratione quibusdam ut. Repudiandae, reprehenderit quod. Laboriosam culpa omnis quibusdam provident veniam quaerat corporis autem hic necessitatibus.</p>
+    </div> -->
+
+
+
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+        $("#btn").click(function(){
+                // $("div p.sample").css({"background":"pink"})//Descendant Filter
+                // $("ol+div").css({"background":"pink"}) //Next Adjacent Selector
+                // $("div>p").css({"background":"pink"}) //Child selector
+                $(".sample~p").css({"background":"pink"}) //Child selector
+
+            })
+        })
+    </script>
+</body>
+</html>

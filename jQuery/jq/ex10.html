@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            width:100px;
+            height: 100px;
+            background-color: orangered;
+        
+        }
+    </style>
+</head>
+
+
+<body>
+    
+    <button id="btn">Click To Animate</button>
+    <div id="container"></div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+
+        $("documents").ready(function(){
+            $("#btn").click(function(){
+
+                // alert("hi")
+                $("#container").animate({left:'500px' ,'height':'500px','width':'500px'})
+            })
+        })
+    </script>
+</body>
+</html>

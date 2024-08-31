@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            width:100px;
+            height: 100px;
+            background-color: orangered;
+            position: relative;
+        
+        }
+    </style>
+</head>
+
+
+<body>
+    <center>
+    <h1>Computer Education</h1>
+    <button id="btn1">Create</button>
+    <button id="btn2">Prepend</button>
+    <button id="btn3">HTML</button>
+    <button id="btn4">Text</button>
+    <div id="id1"><h2>This is sample program in id1</h2></div>
+    <div id="id2"><h2 >This is sample program in id2</h2></div>
+    <div class="class1"><h2 >This is sample program in class1</h2></div>
+    <div class="class2"><h2 >This is sample program in class2</h2></div>
+    <div id="para" style="background-color: yellow; color: red;"></div>
+    </center>
+    <script src="../js/jquery.js"></script>
+    <script>
+
+        $("documents").ready(function(){
+            $("#btn1").click(function(){
+                let paragraph = $("<p>")
+                    paragraph.append("<h1>This is creating heading tag</h1>")
+                    $("#id1").html(paragraph);
+            })
+            $("#btn2").click(function(){
+                    $("#id2").prepend("<h1>This is prepend Text.....");
+            })
+                                                                                                                                                                                                                                                                                                                                                         
+
+            $("#btn3").click(function(){
+                    $(".class1").html("<h1>This is html tag.....");
+            })
+
+
+            $("#btn4").click(function(){
+                    $(".class2").text("<h1>This is html tag.....");
+            })
+
+
+        })
+    </script>
+</body>
+</html>

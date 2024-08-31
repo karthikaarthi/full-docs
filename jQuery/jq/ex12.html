@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET METHOD</title>
+
+    <style>
+        #container{
+            width:100px;
+            height: 100px;
+            background-color: orangered;
+            position: relative;
+        
+        }
+    </style>
+</head>
+
+
+<body>
+    
+    <button id="btn1">GET TEXT</button>
+    <button id="btn2">GET HTML</button>
+    <button id="btn3">GET ATTRIBUTE</button>
+    <div id="para" style="background-color: yellow; color: red;"><h1>Computer <u> Education </u></h1></div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+
+        $("documents").ready(function(){
+            $("#btn1").click(function(){
+                alert("Text: "+$("#para").text());
+            })
+
+            $("#btn2").click(function(){
+                alert("HTML Tage: "+$("#para").html());
+            })
+
+            $("#btn3").click(function(){
+                alert("Attribute: "+$("#para").attr("style"));
+            })
+
+
+        })
+    </script>
+</body>
+</html>

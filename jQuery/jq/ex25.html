@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Read The Value of HTML Table by jQery </title>
+</head>
+<body>
+    <h1>How to Read The Value of HTML Table by jQery</h1>
+
+
+
+    <br><br>
+    <table id="myTable" border="2px" cellpadding="5px">
+
+        <tr>
+            <th>Sno</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Delete</th>
+            
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Ram</td>
+            <td>Salem</td>
+            <td><button class="del">Delete</button></td>
+            
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Sam</td>
+            <td>Thirchy</td>
+            <td><button class="del">Delete</button></td>
+            
+        </tr>
+
+        <tr>
+            <td>   3</td>
+            <td>Ramya</td>
+            <td>   Salem</td>
+            <td><button class="del">Delete</button></td>
+            
+        </tr>
+
+
+        <tr>
+            <td>4</td>
+            <td>Kumar</td>
+            <td>Chennai</td>
+            <td><button class="del">Delete</button></td>
+            
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>Devi</td>
+            <td>Salem</td>
+            <td><button class="del">Delete</button></td>
+            
+        </tr>
+
+      
+
+    </table>
+
+    <button id="btn">Read Values</button>
+    <p id="out"></p>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        $("documents").ready(function(){
+            $("#btn").click(function(){
+                let vals=" ";
+                $("#myTable tr").each(function(){
+                    
+                    vals+=$(this).find("td:eq(0)").text()+" - ";
+                    vals+=$(this).find("td:eq(1)").text()+" - ";
+                    vals+=$(this).find("td:eq(2)").text()+" <br> ";
+                })
+                $("#out").html(vals);
+            })
+        })
+    </script>
+</body>
+</html>

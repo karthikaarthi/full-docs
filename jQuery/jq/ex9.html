@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            padding: 10px;
+            color: blue;
+        }
+
+        .highlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body id="bdy">
+    
+    <h1>Welcome to all</h1>
+    <p id="x"></p>
+    <p id="y"></p>
+
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("h1").dblclick(function(){
+                $("h1").toggleClass("highlight");
+            })
+        })
+
+
+
+    </script>
+</body>
+</html>

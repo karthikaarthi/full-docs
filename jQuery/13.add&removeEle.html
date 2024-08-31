@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .design{
+            color:red;
+            font-size: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <h3 class="design">Hello world</h3>
+    <button id="Btn1">Show Style</button>
+    <button id="Btn2">Remove Style</button>
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("#Btn1").click(function(){
+                $("h3").addClass("design");
+            })
+
+            $("#Btn2").click(function(){
+                $("h3").removeClass("design");
+            })
+
+        })
+    </script>
+</body>
+</html>

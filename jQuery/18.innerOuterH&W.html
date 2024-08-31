@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Outer height and width</title>
+
+    <style>
+        div{
+            height: 150px;
+            width: 200px;
+            background-color: orange;
+            padding: 10px;
+            border:10px solid orangered;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello world</div>
+        <script src="js/jquery.js"></script>
+        <script>
+            $("document").ready(function(){
+                // Inner Height = element+padding
+                console.log("InnerHeight: ",$("div").innerHeight())
+                console.log("Innerwidth: ",$("div").innerWidth())
+
+                 // Outer Height = element+padding+border
+                 console.log("OuterHeight: ",$("div").outerHeight())
+                console.log("OuterWidth: ",$("div").outerWidth())
+
+            })
+        </script>
+</body>
+</html>

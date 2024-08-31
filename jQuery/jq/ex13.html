@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            width:100px;
+            height: 100px;
+            background-color: orangered;
+            position: relative;
+        
+        }
+    </style>
+</head>
+
+
+<body>
+    
+    <button id="btn1">SET TEXT</button>
+    <button id="btn2">SET HTML</button>
+    <button id="btn3">SET ATTRIBUTE</button>
+    <div id="para" style="background-color: yellow; color: red;"><p>Computer  Education</p><u>www.computer.com </u><img  alt=""></div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+
+        $("documents").ready(function(){
+            $("#btn1").click(function(){
+            $("p").text("I change the content");
+            })
+
+            $("#btn2").click(function(){
+                $("#para").html("<h1> This is Bold text </h1>");
+            })
+
+            $("#btn3").click(function(){
+                $("img").attr("src","../img/1.jpg");
+            })
+
+
+        })
+    </script>
+</body>
+</html>

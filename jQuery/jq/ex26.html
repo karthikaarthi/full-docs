@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Get The Selected Radio Button Value</title>
+</head>
+<body>
+    <h3>How To Get The Selected Radio Button Value</h3>
+    <label for="">Select Gender</label>
+    <input type="radio" name="gender" id="male">Male
+    <input type="radio" name="gender" id="female">female
+    <button>Get Result</button>
+    <p id="out"></p>
+    <script src="../js/jquery.js"></script>
+
+    <script>
+        $("documents").ready(function(){
+            $("button").click(function(){
+                if($("#male").is(":checked")){
+                    $("#out").html("You Are Selected Male");
+                }
+                else if ($("#female").is(":checked")){
+                    $("#out").html("You Are Selected Female");
+                }
+                else{
+                    $("#out").html("Please Select Gender....");               
+                }
+            })
+        })
+    </script>
+</body>
+</html>

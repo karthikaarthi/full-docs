@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel{
+            background-color: #A1A1A1;
+            height: 300px;
+            width: 100%;
+
+        }
+
+        #flip{
+            background: #F1f1f1;
+            height: 30px;
+            width: 100%;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="flip">Click me to slide upp</div>
+
+    <div id="panel">Cadd Cae Computers www.caddcae.com</div>
+
+    <script src="../js/jquery.js"></script>    
+
+    <script>
+        $("documents").ready(function(){
+            // $("#panel").slideUp("slow")
+
+            $("#flip").click(function(){
+                $("#panel").slideUp("slow");
+                // $("#panel").slideToggle("5000")
+            })
+        })
+    </script>
+</body>
+</html>
