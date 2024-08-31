@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get Data From Data Base</h1>
+    <label>Enter your User Id</label>
+    <input type="text" id="input">
+    <button id="submit">Submit</button>
+
+    <div id="container">
+        <!-- Id: {{%id%}}
+        name: {{%name%}}
+        city:{{%city%}} -->
+        <p>Id: <span id="id"></span></p>
+        <p>Name: <span id="name"></span></p>
+        <p>city: <span id="city"></span></p>
+    </div>
+
+    <script>
+        document.getElementById("submit").addEventListener("click",()=>{
+            console.log("hello1");
+            let container = document.getElementById("container")
+            let inputele = document.getElementById("input")
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange=()=>{
+                if(xhttp.readyState == 4 && xhttp.status ==200){
+                    let user = JSON.parse(xhttp.responseText);
+                    // console.log(user[0].id)
+                    // container.innerHTML = container.innerText.replace("{{%id%}}",user[0].id)
+                    //                                 .replace("{{%name%}}",user[0].name)
+                    //                                 .replace("{{%city%}}",user[0].city)
+                    
+                    document.getElementById("id").innerText = user[0].id;
+                    document.getElementById("name").innerText = user[0].name;
+                    document.getElementById("city").innerText = user[0].city;
+
+                }
+            }
+            xhttp.open("POST",`/user/${inputele.value.trim()}`,true);
+            xhttp.send()
+        })
+    </script>
+
+
+</body>
+</html>

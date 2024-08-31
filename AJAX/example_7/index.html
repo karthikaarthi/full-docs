@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body button {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="get">Get</button>
+    <button id="post">Post</button>
+    <button id="patch">Patch</button>
+    <button id="delete">Delete</button>
+</body>
+
+<script>
+    const getBtn = document.getElementById("get")
+    const postBtn = document.getElementById("post")
+    const patchBtn = document.getElementById("patch")
+    const deleteBtn = document.getElementById("delete")
+
+    deleteBtn.onclick = deleteRequest;
+    patchBtn.onclick = patchRequest;
+
+    function deleteRequest() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = () => {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+            }
+        }
+        xhttp.open('DELETE', '/delete', true);
+        // xhttp.setRequestHeader("X-HTTP-Method-Override", "DELETE");
+        xhttp.send();
+    }
+
+    function patchRequest() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = () => {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+            }
+        }
+        xhttp.open('PATCH', '/patch', true);
+        // xhttp.setRequestHeader("X-HTTP-Method-Override", "PATCH");
+        xhttp.send()
+    }
+
+
+</script>
+
+</html>

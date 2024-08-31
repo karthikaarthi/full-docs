@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get Records from server</h1>
+
+    <div id="container"></div>
+    <button id="loadcontent">
+        Loadcontent
+    </button>
+
+    <script>
+        let container = document.getElementById("container");
+        let loadcontentBtn = document.getElementById("loadcontent")
+
+        loadcontentBtn.addEventListener("click",()=>{
+            console.log("clicked");
+            xhttp = new XMLHttpRequest();
+
+            xhttp.open("GET","/content",true);
+
+            xhttp.onreadystatechange = ()=>{
+              if(xhttp.readyState == 4 && xhttp.status == 200){
+                   const jsonRecord =  xhttp.responseText;
+                   showToRecord(jsonRecord);
+                //    console.log(jsonRecord);
+                //    container.innerText =  jsonRecord;
+
+              }
+              else{
+                console.log("error")
+              }
+            }
+
+            function showToRecord(data){
+                for(let i=0;i<data.length;i++){
+                    console.log(data[i])
+                    container.innerText += data[i];
+                }
+            }
+            xhttp.send()
+        })
+
+
+    </script>
+
+
+</body>
+</html>

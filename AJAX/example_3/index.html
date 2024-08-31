@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Basic</h1>
+    <div id="container"></div>
+
+    <button id="btn1">Make Request</button>
+    <button id="btn2">Cancel Request</button>
+
+    <script>
+        let makeRequestBTN = document.getElementById('btn1');
+        let cancelRequest = document.getElementById('btn2');
+        let divEle = document.getElementById("container");
+        makeRequestBTN.addEventListener("click",makeRequest1);
+        let xhr = new XMLHttpRequest();
+        function makeRequest1(){
+            console.log('hello')
+            xhr.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    divEle.innerHTML = this.responseText;
+                }
+            }
+            xhr.open('GET','/request',true)
+            xhr.send()
+        }
+       
+
+    </script>
+</body>
+</html>

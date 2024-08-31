@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX</h1>
+    <div id="container"></div> <br><br>
+    <button id="makeRequest">Make Request</button>
+    <script>
+        const divEl = document.getElementById("container");
+        const makeRequestBTN = document.getElementById("makeRequest");
+        makeRequestBTN.addEventListener("click", makeRequest);
+
+        function makeRequest() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    divEl.innerHTML = this.responseText;
+                }
+            }
+            xhttp.open("GET", "/content", true);
+            xhttp.send();
+        }
+
+    </script>
+</body>
+</html>

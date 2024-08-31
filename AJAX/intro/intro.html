@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        // AJAX -> Asynchronous Javascript and XML
+
+const object ={
+    name:"some name",
+    age:10
+}
+
+
+
+{/* <object>
+
+    <name> some Name</name>
+    <age>10</age>
+
+</object> */}
+
+(" <object><name> some Name</name><age>10</age></object>")
+// XMLParser.....
+// JSON -> Javascript Object Notation.
+
+
+// string,number,object,array.....
+
+
+// XMLHttpRequest
+
+// 0 -> unsent
+// 1 -> called open
+// 2 -> send ->Headers_received
+// Error
+// 3 -> data is loaded
+// 4 -> data is completed ,response is send
+
+// this is API and it is alos constructor
+    const container = document.getElementsByClassName('container')[0];
+
+    function showToUser(data){
+        for(let i=0;i<data.length;i++){
+            const newElement = document.createElement("h3")
+            newElement.textContent = `${i+1} ${data[i].title}`;
+            container.append(newElement)
+        }
+    }
+    const url ="https://jsonplaceholder.typicode.com/photos";
+    console.log("hello")
+    const xhr = new XMLHttpRequest();
+    // console.log(xhr);
+    console.log(xhr.readyState)
+
+    xhr.onreadystatechange =()=>{
+        // console.log(xhr.readyState)
+        if(xhr.readyState ==4 && xhr.status === 200){
+            // console.log(JSON.parse( xhr.response));
+            const photoArray = JSON.parse(xhr.response)
+            // console.log(photoArray[0])
+            showToUser(photoArray)
+        }
+        // else{
+        //     console.log('error')
+        // }
+    }
+
+    xhr.open("GET",url)
+    xhr.send()
+
+    // https://jsonplaceholder.typicode.com/photos
+
+    </script>
+</body>
+</html>
+
+
+
+

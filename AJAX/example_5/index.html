@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Send Data To Server</h1>
+    <label for="username">User Name</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <button id="submit">Submit</button>
+    <h1 id="status">Status:</h1>
+
+
+    <script>
+        let submit = document.getElementById("submit")
+        let ele = document.getElementById("status")
+        submit.addEventListener("click",()=>{
+            let inputEle = document.getElementsByTagName("input")
+            let url = `?username=${inputEle[0].value}&password=${inputEle[1].value}`
+            let xhttp= new XMLHttpRequest()
+
+            xhttp.onreadystatechange = ()=>{
+                if(xhttp.readyState == 4 && xhttp.status== 200){
+                    ele.innerHTML += xhttp.responseText;  
+                    // console.log(xhttp)
+
+                }
+            }
+
+            xhttp.open("POST",url,true);
+            xhttp.send()
+
+           
+        })
+
+    </script>
+    
+</body>
+</html>

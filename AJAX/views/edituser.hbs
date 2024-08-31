@@ -1,0 +1,45 @@
+
+<body>
+    
+
+<div class="container">
+{{#if msg}}
+        <div class="alert">{{msg}}</div>
+ {{/if}}
+<h3>Edit User</h3>
+
+{{#each rows}}
+
+<form action="/edituser/{{this.id}}" method="post">
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{this.name}}">
+</div>
+
+<div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" name="age" value="{{this.age}}">
+</div>
+
+
+<div class="form-group">
+    <label for="city">City</label>
+    <input type="text" name="city" value="{{this.city}}">
+</div>
+
+<div class="form-group">
+    <button type="submit">Save Change Details</button>
+    {{#if msg}}
+        <a href="/" class="back">View Details</a>
+    {{/if}}
+
+</div>
+
+
+
+</form>
+{{/each}}
+</div>
+
+</body>
+

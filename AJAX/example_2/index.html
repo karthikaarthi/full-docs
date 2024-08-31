@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="makeRequest">Make Request</button>
+    <button id="cancelRequest">Cancel Request</button>
+
+    <script>
+        let divEle = document.getElementById('container');
+        let makeRequest = document.getElementById('makeRequest');
+        let cancelRequests = document.getElementById("cancelRequest")
+        makeRequest.addEventListener('click',makeRequests)
+        cancelRequests.addEventListener('click',cancelRequest)
+
+        function makeRequests(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = ()=>{
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                    divEle.innerHTML =  xhttp.responseText;
+                    console.log(xhttp.getAllResponseHeaders())
+                    console.log(xhttp.getResponseHeader("content-type"));
+                    console.log(xhttp.status);
+                    console.log(xhttp.statusText);  
+                }
+            }
+            xhttp.open('get','/request',true);
+            xhttp.send()
+        }
+
+        function cancelRequest(){
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.abort()
+            divEle.innerHTML='<p>Request is aport</p>'
+        }
+    </script>
+</body>
+</html>
