@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="resultController.js"></script>
+</head>
+<body ng-app="myApp"> 
+    Hide Information : <input type="checkbox" ng-model="isshow">
+    Grade: <input type="checkbox" ng-model="ishide"> 
+    <div ng-controller="resultCtrl" ng-show="isshow" >
+
+        <ol>
+            <li ng-repeat="x in result">{{x.name +" - "+x.grade}}</li>
+        </ol>
+
+    </div>
+  
+
+
+</body>
+</html>

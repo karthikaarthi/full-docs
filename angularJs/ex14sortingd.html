@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <style>
+        td{
+            padding:5px;
+            
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script>
+        let app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.info=[{
+                "name":"zzz",
+                "age":34,
+                "dob":"3.4.90",
+                "salary":30000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"bbb",
+                "age":34,
+                "dob":"20.4.90",
+                "salary":80000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"aaa",
+                "age":34,
+                "dob":"3/6/90",
+                "salary":50000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"Abi",
+                "age":34,
+                "dob":"3/6/90",
+                "salary":50000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"eee",
+                "age":34,
+                "dob":"3/6/90",
+                "salary":50000,
+                "city":"salem"
+            },
+            
+        ]
+        })
+    </script>
+</head>
+<body ng-controller="myCtrl">
+    <div  >
+        <h1 class="text-success text-center">Searching Filter</h1>
+        <table border="2px"  >
+            <!-- ;reverse=!reverse -->
+            <tr>
+                <td><a href="#" ng-click="order='name'"> Name</a></td>
+                <td><a href="#" ng-click="order='city'"> City</a></td>
+                <td><a href="#" ng-click="order='dob'"> DOB </a></td>
+                <td><a href="#"  ng-click="order='salary'"> Salary</a></td>
+                <td><a href="#"  ng-click="order='csalary'"> CSalary</a></td>
+            </tr>
+            <!-- true,+,- -->
+            <td>{{x.name }}</td>
+            <tr ng-repeat="x in info |orderBy:order:reverse">
+                <td>{{x.name
+                
+                
+                
+                
+                
+                }}</td>
+            <td>{{x.city }}</td>
+            <td>{{x.dob}}</td>
+            <td>{{x.salary}}</td>
+            <td>{{x.salary}}</td>
+        </tr>
+        </table>
+
+    </div>
+</body>
+</html>

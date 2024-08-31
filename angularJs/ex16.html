@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+            .class-1{
+                height: 100px;
+                width: 100px;
+                background-color: black;
+                border-radius: 30px;
+            }
+            .class-2{
+                height: 400px;
+                width: 400px;
+                background-color: yellow;
+                border-radius: 30px;
+            }
+            .class-3{
+                height: 600px;
+                width: 600px;
+                background-color: red;
+                border-radius: 30px;
+            }
+        </style>
+        <script src = "js/angular.min.js"></script>
+    </head>
+    <body>
+        <!-- <div ng-app = "" > 
+            <select ng-model = "className">
+                <option value = "none" >None</option>
+                <option value="class-1">class 1</option>
+                <option value="class-2">class 2</option>
+                <option value="class-3">class 3</option>
+            </select> <br><br>
+            <div id = "container" ng-class = "className"> </div>
+        </div> -->
+
+        <div ng-app = "" ng-init = "state = ''"> 
+          <input type="text" ng-focus = "focus" ng-blur = "blur">
+          <p> State : {{state}} </p>
+      </div>
+
+
+    </body>
+</html>

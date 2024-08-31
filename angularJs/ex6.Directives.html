@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <title>Directives</title>
+
+    <script src="./js/angular.min.js"></script>
+
+    <script>
+        let app=angular.module("myApp",[])
+        app.controller("mymodel",function($scope){
+            $scope.course="hello"
+        })
+    </script>
+</head>
+<body  >
+    
+
+    <!-- 1. ng-app
+    2. ng-int
+    3. ng-model
+    4. ng-bind
+    5. ng-controller
+    6. ng-repeat
+    7. ng-readonly
+    8. ng-disabled
+    9. ng-if
+     -->
+
+     <h1>AngularJs Directives</h1>
+
+     <div>
+        <p>
+            {{4+56}} <br>
+            {{"hello"}} <br>
+            {{67+4}}
+
+        </p>
+     </div>
+
+     <div ng-init="pi=3.14;r=20">
+        Circumference of a circle of radius 20 is    {{2*r*pi}}
+        <span ng-bind="2*pi*r"></span>
+     </div>
+
+     <div ng-controller="mymodel">
+        Course  <input type="text" ng-model="course">
+        <br>
+        {{course}}
+     </div>
+     
+     <div ng-init="arr=['C','C++','Python','Java','JavaScript']">
+        <ul>
+            <li ng-repeat="x in arr">{{x}}</li>
+        </ul>
+
+     </div>
+
+     <div ng-init="checked=true">
+
+        New User: <input type="checkbox" ng-model="checked">
+        <br>
+        Name: <input type="text" ng-if="checked"> <br>
+        ReadOnly: <input type="text" ng-readonly="checked" value="my programming line"><br>
+        Disabled: <input type="text" ng-disabled="checked" value="Welcome to learn AngularJs">
+
+     </div>
+</body>
+</html>

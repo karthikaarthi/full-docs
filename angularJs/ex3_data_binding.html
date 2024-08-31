@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/angular.min.js"></script>
+    <script type="">
+        var app = angular.module("myApp",[]);
+        app.controller("oneWay",function($scope){
+            $scope.msg="Welcome to learn AngularJS in my Programming code";
+        })
+    </script>
+</head>
+<body bgcolor="lightblue">
+    
+    <center>
+        <h1>One Way Data Binding</h1>
+
+        <div ng-controller="oneWay">
+
+            {{msg}}
+            <br>
+            <span ng-bind="msg"></span>
+
+        </div>
+    </center>
+</body>
+</html>

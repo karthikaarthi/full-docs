@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <script src="js/angular.min.js"></script>
+    <script>
+        let app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.info=[{
+                "name":"aaa",
+                "age":34,
+                "dob":"3.4.90",
+                "salary":30000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"bbb",
+                "age":34,
+                "dob":"20.4.90",
+                "salary":80000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"ccc",
+                "age":34,
+                "dob":"3/6/90",
+                "salary":50000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"ddd",
+                "age":34,
+                "dob":"3/6/90",
+                "salary":50000,
+                "city":"Coimbatore"
+            },
+            {
+                "name":"eee",
+                "age":34,
+                "dob":"3/6/90",
+                "salary":50000,
+                "city":"Coimbatore"
+            },
+            
+        ]
+        })
+    </script>
+</head>
+<body ng-controller="myCtrl">
+    Select number of rows: <input type="number" ng-model="limit">
+    <div  >
+        {{info}}
+        <ol ng-repeat="x in info|limitTo:limit:2" >
+            <li>{{x.name |uppercase}}</li>
+            <li>{{x.city |lowercase}}</li>
+            <li>{{x.dob |date:"MM/dd/yyyy"}}</li>
+            <li>{{x.salary|number:2}}</li>
+            <li>{{x.salary|currency:'&#8377'}}</li>
+        </ol>
+
+    </div>
+    <div>
+        <pre>
+        {{info |json}}
+    </pre>
+    </div>
+</body>
+</html>

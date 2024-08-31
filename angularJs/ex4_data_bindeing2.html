@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/angular.min.js"></script>
+    <script type="">
+        var app = angular.module("myApp",[]);
+        app.controller("twoWay",function($scope){
+            $scope.msg="Welcome to learn AngularJS in my Programming Line";
+        })
+    </script>
+</head>
+<body bgcolor="lightblue">
+    
+    <center>
+        <h1>Two Way Data Binding</h1>
+
+        <div ng-controller="twoWay">
+            Enter your name <input type="text" ng-model="msg">
+           <h3>{{msg}}</h3> 
+            <br>
+           
+
+        </div>
+    </center>
+</body>
+</html>

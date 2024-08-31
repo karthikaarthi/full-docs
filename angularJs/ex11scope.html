@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script>
+        let app = angular.module("studentInfo",[]);
+        app.run(function($rootScope){
+            $rootScope.info = "Result";
+        })
+        app.controller("studentCtrl",function($scope){
+            $scope.info = "student Information";
+            $scope.name = "Ram";
+            $scope.grade = "Grade A";
+            $scope.gradeInfo = function(){
+                alert("Grade A>90%")
+            }
+            
+        })
+    </script>
+</head>
+<body ng-app="studentInfo">
+
+    <h3>  {{info}}</h3>
+  
+    <div ng-controller="studentCtrl">
+        <h1>{{info}}</h1>
+        Student Name: {{name}}
+        <br>
+        Grade : <span ng-bind="grade"></span>
+        <br>
+        <input type="text" ng-model="name">
+
+        <input type="button" name="" value="MarksInfo" ng-click="gradeInfo()">
+    </div>
+    <div>
+        {{info}}
+    </div>
+</body>
+</html>

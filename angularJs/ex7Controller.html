@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller</title>
+    <script src="js/angular.min.js"></script>
+
+    <script>
+
+    </script>
+</head>
+<body ng-app="ngctrlApp">
+    <h1 style="text-align: center;">Controller</h1>
+    <div ng-controller="myController">
+        {{msg}} <br>
+        <button ng-click="name()">Display Name</button>
+        <br><br>
+        Enter Email Id <input type="text" ng-model="mail">
+        <br>
+
+        <button ng-click="mailid(mail)">Display mailid</button>
+        <br><br>
+        firstname: {{firstname}} <br>
+        lastname: {{secondname}} <br>
+        {{firstname+" "+secondname}}
+
+
+    </div>
+
+    <div ng-controller="2controller">
+        <br><br>
+        firstname: {{firstname}} <br>
+        lastname: {{secondname}} <br>
+        {{firstname+" "+secondname}}
+
+    </div>
+
+    <div ng-controller="ngctrl">
+        Course: <input type="text" ng-model="course">
+        <br>Duration  <input type="text" ng-model="duration">
+        <br>
+        Course with Duration {{course+" "+duration}}
+
+    </div>
+    <br>
+    <br>
+    <div ng-controller="ngctrlObj">
+
+        Employee Name:{{employee.name}}
+        <br>
+        Employee Name:{{employee.salary}}
+
+    </div>
+
+    <br>
+    <div ng-controller="ngctrlParent">
+        Parent:{{info}}
+        <div ng-controller="ngctrlChild">
+            child:{{info1}} <br>
+            parent inside child:{{info}}
+        </div>
+        child  inside parent: {{info1}}
+
+    </div>
+    <script>
+        let App= angular.module("ngctrlApp",[])
+        App.controller("myController",function($scope){
+            $scope.msg="AngularJS Controllers"
+            $scope.name=function(){
+                alert("Raj")
+            }
+            $scope.mailid = function(val){
+                alert(val);
+            }
+        })
+        App.controller("2controller",function($scope){
+            $scope.firstname="ram"
+            $scope.secondname="kumar"
+        })
+ 
+        App.controller("ngctrl",function($scope){
+            $scope.course = "AngularJs";
+            $scope.duration = "3 months";
+        })
+
+        App.controller("ngctrlObj",function($scope){
+            $scope.employee={name:'Rajesh',salary:3000}
+        })
+
+        App.controller("ngctrlParent",function($scope){
+            $scope.info ="Hello friends"
+        })
+
+        App.controller("ngctrlChild",function($scope){
+            $scope.info1 ="Hello buddies"
+        })
+
+    </script>
+    
+</body>
+</html>

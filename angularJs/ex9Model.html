@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+    <style>
+        form{
+            margin: 40px;
+        }
+        form input{
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+</head>
+<body bgcolor="gray" ng-app="FormCtrlApp">
+    
+    <div style="color: white;">
+        <h1 style="text-align: center;">Employee Information</h1>
+        <form action="#" ng-controller="empController">
+            <h5>{{info}}</h5>
+
+            Employee Name: <br>
+            <input type="text" placeholder="Name" ng-model="emp.name">
+            <br>
+            <br>
+            Employee Id: <br>
+            <input type="number" placeholder="Id" ng-model="emp.id">
+            <br>
+            <br>
+            Employee Designation <br>
+            <input type="text" placeholder="Designation" ng-model="emp.design">
+            <br>
+            <br><br>
+            Employee Information
+            <input type="submit" value="submit" ng-click="empData(emp)">
+            
+        </form>
+    </div>
+
+    <script>
+        let App = angular.module("FormCtrlApp",[]);
+        App.controller("empController",function($scope){
+            $scope.info="Its about employee data";
+            $scope.empData = function(data){
+                console.log(data)
+            }
+
+        })
+    </script>
+</body>
+</html>

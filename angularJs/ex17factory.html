@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app = "myApp" ng-controller = "myCtrl" > 
+        {{userData}}        
+    </div>
+    <script>
+        var app = angular.module("myApp",[]);
+        app.value("userName","Surya");
+        app.value("password","surya@1234");
+    
+        //create factory function
+        app.factory("userData",(userName,password) => {
+               return `UserName : ${userName} Password : ${password}`;
+        });
+    
+        app.controller("myCtrl",($scope,userData) => {
+               $scope.userData = userData;   
+         });
+    
+    </script>
+    
+</body>
+</html>
