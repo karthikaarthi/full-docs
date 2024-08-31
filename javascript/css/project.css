@@ -1,0 +1,264 @@
+
+:root{
+    --orange:orangered;
+}
+*{
+    padding:0px;
+    margin:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.container1{
+    background-image: url('../images/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    border:2px solid white;
+    flex-wrap: wrap;
+    align-items: space-around;
+}
+
+header{
+     display: flex;
+     flex-wrap: wrap;
+     row-gap: 20px;
+     align-items: center;
+}
+#logo{
+    flex:1;
+    color: orangered;
+    font-size: 2em;
+    min-width: 294px;  
+}
+nav {
+    flex:3;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    min-width: 707px;
+}
+nav a{
+    flex:1;
+}
+nav a:hover{
+    color:orangered;
+}
+header a{
+    text-decoration: none;
+    color:white;
+}
+label{
+    /* flex:1; */
+    /* min-width: 339px; */
+    display: flex;
+    border:2px solid orangered;
+
+}
+.maincontainer{
+    display: flex;
+    padding-left:50px;
+    flex-direction: column;
+}
+
+label input{
+    border:none;
+    padding:10px;
+    font-size: 1em;
+    color:white;
+    background-color: transparent;
+    font-weight: bolder;
+    padding:10px;
+    outline: none;
+    width: 20vw;
+}
+
+label button{
+    padding:10px;
+    border:none;
+    font-size: 1em;
+    color:white;
+    background-color: orangered;
+}
+.maincontent{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 2fr 1fr;
+}
+.content{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width:800px){
+    .container1{
+        background: linear-gradient(gray,blue);
+    }
+    nav{
+        flex-direction: column;
+    }
+   .maincontent{
+    grid-template-rows: 1fr 1fr;
+   }
+
+   .container1{
+    background: linear-gradient(gray,black);
+    height: 200vh;
+
+   }
+} 
+/* .container{
+   background-image: url('../images/bg4.jpg');
+   height: 100vh;
+   width: 100vw;
+   background-size: cover;
+   background-position: center;
+}
+to fix navigation bar
+header{
+    padding:10px;
+    display: flex;
+    align-items: center;
+}
+
+
+navigation bar
+header a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.2em;
+
+}
+#logo{
+    color:var(--orange);
+    font-size: 1.9em;
+    font-weight: bolder;
+    flex:1;
+}
+nav{
+    flex:3;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+label{
+  
+}
+
+to fix button into input
+
+label{
+    position:relative;
+    border:2px solid var(--orange);
+    border-radius: 5px;
+
+
+}
+input{
+    position:relative;
+    width: 300px;
+    border:none;
+    padding: 8px;
+    background-color: transparent;
+    color:white;
+
+}
+
+label button{
+
+    position:absolute;
+    top:0;
+    bottom: 0;
+    border:none;
+    padding:10px;
+    background-color: var(--orange);
+    color: white;
+    right: 0;
+}
+
+.maincontent{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height:100vh;
+    align-items: center;
+}
+
+
+
+.tagline1{
+    color:white;
+    font-size: 1.9em;
+    font-weight: bold;
+}
+
+.tagline2{
+    color:var(--orange);
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.tagline3{
+    color:white;
+    font-size: 1.5em;
+}
+
+.tagline4{
+    margin-top: 1em;
+    color:white;
+    line-height: 1.25em;
+
+}
+
+.maincontent button{
+    margin-top: 1em;
+    padding:10px;
+    width: 20%;
+    border:none;
+    background-color:var(--orange);
+    color:white;
+    border-radius: 5px;
+}
+
+.content{
+    padding-left: 40px;
+    color:white; 
+}
+
+
+form{
+    width:80%;
+    border:2px solid black;
+    background-color: rgba(0,0,0,.5);
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input{
+    border:2px solid orangered;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 20vw;
+    margin-top: 20px;
+    display: flex;
+
+}
+
+
+.container1{
+    display: flex;
+    flex-wrap: wrap;
+}
+ */

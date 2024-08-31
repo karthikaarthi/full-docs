@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            reachA=new Promise((resolve,reject)=>{
+            const reached= false
+            if(reached)
+            {
+               setTimeout(resolve,3000,'vidhya reached')
+            }
+            else    reject('vidhya Not reached')
+        })
+
+        // reachA.then((msg)=>console.log(msg))
+        // .catch((msg)=>console.log(msg))
+        async function fun(){
+            return 'hello'
+        }
+
+        // fun().then((msg)=>console.log(msg))
+
+        async function astatus(){
+            try{
+                console.log('hi')
+                 res = await reachA
+                  console.log(res)
+                  console.log('bye')
+
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        astatus()
+
+        bookking=new Promise((resolve,reject)=>{
+            let booking_success=true
+            if(booking_success)
+                resolve(234)
+            else
+                reject()
+        })
+
+        async function busbook(){
+           res=await bookking
+           console.log(res)
+    }
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/cm-2nd.css">
+    <style>
+        *{
+    margin:0px;
+    padding:0px;
+}
+
+.parent_container{
+    background-color:aqua;
+    width:100vw;
+    height: 100vh;
+    padding:10px;
+}
+
+.container{
+    padding:40px;
+    width:50vw;
+    height: 50vh;
+    background:linear-gradient(gray,black);
+    border-radius: 5px;
+    margin:200px auto ;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.hr{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    width:30%;
+    color:aqua;
+    
+}
+.input{
+    display: flex;
+    justify-content: center;
+
+}
+select{
+    width:70%;
+    margin-top: 30px;
+    /* margin:20px; */
+    padding:10px;
+    /* background-color:transparent; */
+    /* color:white; */
+    border:2px solid aqua;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+    background:linear-gradient(gray,aqua);
+    color:black;
+    color:white;
+}
+
+
+h2{
+    color:aqua;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+
+}
+
+button{
+    width:20vw;
+    padding:10px;
+    background: linear-gradient(gray,aqua);
+    border:none;
+    border-radius: 9px;
+    margin-top: 20px;
+
+}
+
+#result{
+    color:white;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+<div class="parent_container">
+    <div class="container">
+        <h2>Select a City</h2>
+        <div class="hr">
+            <hr>
+
+        </div>
+
+        <div class="input">
+            <select name="" id="input">
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+        </div>
+
+        <div class="button">
+            <button >Show Status</button>
+        </div>
+    </div>
+</div>
+<!-- `The Indian city of Bangulur has a population of 868768687. Language spoken is kannada and literacy rate is 8768769` -->
+
+
+<!-- Bengaluru:
+population = 8443675
+literacyRate = 88.71
+language = 'kannada'
+Chennai:
+population = 4646732
+literacyRate = 90.20
+language = 'Tamil'
+Mumbai:
+population = 12442373;
+literacyRate = 86.20;
+language = 'Marathi';
+Delhi:
+population = 16787941;
+literacyRate = 86.20;
+language = 'Hindi';
+ -->
+
+
+
+<script>
+
+    const button = document.querySelector('.button')
+    button.addEventListener('click',displayStatus)
+    let resultdiv =document.createElement('div')
+        document.querySelector('.container').appendChild(resultdiv);
+        resultdiv.id='result';
+
+    function displayStatus(){
+        const intput = document.getElementById('input')
+        const city=input.options[input.selectedIndex].value;
+        let population=0,literacyRate=0,language=0;
+
+
+        switch(city){
+            case 'Bengaluru':
+                population = 8443675
+                literacyRate = 88.71
+                language = 'kannada'
+                break;
+            case 'Chennai':
+                 population = 4646732
+                 literacyRate = 90.20
+                language = 'Tamil'
+                break;
+            case 'Mumbai':
+                population = 12442373;
+                literacyRate = 86.20;
+                language = 'Marathi';
+                break;
+
+            case 'Delhi':
+
+                population = 16787941;
+                literacyRate = 86.20;
+                language = 'Hindi';
+                break;
+
+        }
+
+        const text = `The Indian city of ${city} has a population of ${population}. Language spoken is ${language} and literacy rate is ${literacyRate}`
+        document.getElementById('result').innerHTML = text;
+
+
+    }
+
+
+
+
+
+
+    // const button = document.querySelector('button');
+    // // event listener
+    // button.addEventListener('click',displayStatus);
+    // let resultdiv=document.createElement('div');
+    //     resultdiv.id ='result'
+    //     document.querySelector('.container').appendChild(resultdiv);
+
+
+    // function displayStatus(){
+    //     console.log(true)
+    //     const input = document.getElementById('input');
+    //     const city=input.options[input.selectedIndex].value;
+    //     let population=0,literacyRate = 0,language = 0;
+
+    //     switch(city){
+    //         case 'Bengaluru':
+    //             population = 8443675;
+    //             literacyRate = 88.71;
+    //             language = 'kannada';
+    //             break;
+
+    //         case 'Chennai':
+    //             population = 4646732;
+    //             literacyRate = 90.20;
+    //             language = 'Tamil';
+    //             break;
+
+    //         case 'Mumbai':
+    //             population = 12442373;
+    //             literacyRate = 86.20;
+    //             language = 'Marathi';
+    //             break;
+
+    //         case 'Delhi':
+    //             population = 16787941;
+    //             literacyRate = 86.20;
+    //             language = 'Hindi';
+    //             break;
+            
+    //     }
+
+    //     let text=`The Indian city of ${city} has a population of ${population}. Language spoken is ${language} and literacy rate is ${literacyRate}`
+    //     document.getElementById('result').innerHTML = text;
+    // }
+
+</script>
+    
+</body>
+</html>

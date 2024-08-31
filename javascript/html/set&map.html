@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- set -->
+
+<script>
+    let arr=[1,2,3,4,5,6,7,34,52,4,5,2]
+    let set=new Set(arr)
+    let myset=new Set()
+    myset.add(5)
+    myset.add(25)
+    myset.add('hello')
+    myset.add({'a':1,'b':2})
+    myset.add(25)
+    console.log(arr)
+    console.log(myset)
+    let obj={'a':1,'b':2}
+    myset.add(obj)
+    console.log(myset)
+    console.log(myset.delete({'a':1,'b':2}))
+    let arr2= Array.from(myset)
+    console.log(arr2)
+
+
+// Map objects are collections of key-value pairs
+// A key in the map may only occur once
+// key or value can be object
+
+
+// let map1= new Map()
+// map1.set('a',1)
+// map1.set('a',10)
+// map1.set('b',2)
+// map1.set('c',3)
+// console.log(map1.has('a'))
+
+// for(let i of map1){
+//     console.log(i)
+// }
+
+// for(let [k,v] of map1){
+//     console.log(k,v)
+// }
+
+// for(let k of map1.keys()){
+//     console.log(k)
+// }
+
+// for(let val of map1.values()){
+//     console.log(val)
+// }
+
+// map1.forEach((v,k)=>{
+//     console.log(v,k)
+// })
+
+
+// 2d array to map
+
+let arr3 = [['a',1],['b',2]]
+let map3= new Map(arr3)
+console.log(map3)
+
+
+// console.log(map1)
+</script>
+</body>
+</html>

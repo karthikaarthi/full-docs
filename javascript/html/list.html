@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../css/cm-2nd.css"> -->
+    <style>
+        *{
+    margin:0px;
+    padding:0px;
+    font-family: sans-serif;
+}
+
+.parent_container{
+    background-color:aqua;
+    width:100vw;
+    height: 100vh;
+    padding:10px;
+}
+
+.container{
+    padding:40px;
+    width:50vw;
+    height: 50vh;
+    background:linear-gradient(gray,black);
+    border-radius: 5px;
+    margin:200px auto ;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.hr{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    width:30%;
+    color:aqua;
+    
+}
+.input{
+    display: flex;
+    justify-content:center;
+
+}
+input,button{
+    width:50%;
+    margin-top: 30px;
+    padding:10px;
+    border:2px solid aqua;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+    background:linear-gradient(gray,aqua);
+    color:black;
+    color:white; 
+}
+
+
+h2{
+    color:aqua;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    width:10vw;
+    height: 8vh;
+    margin-left:5px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#todo{
+    color:white;
+    margin:20px;
+    /* display: flex;
+    justify-content: center; */
+}
+p{
+    font-size: 1.3em;
+}
+    </style>
+</head>
+<body>
+<div class="parent_container">
+    <div class="container">
+        <h2>Todo List</h2>
+        <div class="hr">
+            <hr>
+
+        </div>
+
+        <span class="input">
+            <input type="text" id="input">
+            <button id="btn">Add</button>
+        </span>
+        <div id="todo">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let input = document.getElementById('input')
+    let btn = document.getElementById('btn')
+    let todoList = document.getElementById('todo')
+
+
+    let todos=[];
+
+    window.onload=()=>{
+        console.log('loaded')
+        todos = JSON.parse(localStorage.getItem('todos')) || []
+        todos.forEach(todo => addtodo(todo));
+        console.log(todos)
+    }
+
+    btn.addEventListener('click',()=>{
+        todos.push(input.value)
+        localStorage.setItem('todos',JSON.stringify(todos))
+        console.log(todos);
+        addtodo(input.value)
+        input.value=''
+    })
+
+    function addtodo(todo){
+        let para = document.createElement('p')
+        para.innerText= todo
+        todoList.appendChild(para)
+        para.addEventListener('click',()=>{
+            para.style.textDecoration='line-through'
+            remove(todo)
+        })
+
+        para.addEventListener('dblclick',()=>{
+            todoList.removeChild(para)
+            remove(todo)
+        })
+    }
+
+
+    function remove(todo){
+        let index = todos.indexOf(todo)
+        if(index>-1){
+            todos.splice(index,1)
+        }
+        localStorage.setItem('todos',JSON.stringify(todos))
+        console.log(todos)
+    }
+
+</script>
+</body>
+</html>
